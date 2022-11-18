@@ -1,4 +1,3 @@
 - A game. Hopefully fun one...
-- A kind of a misery it's locked inside a old machine.
-- All you need to do is to find it, if you really want to.
+- A kind of a misery it's locked inside a old computer machine. All you need to do is to find it, if you really want to.
 - by Alardo96
