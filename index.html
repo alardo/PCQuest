@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PCQuest</title>
+  <link rel="stylesheet" href="custom/custom/jquery-ui.css">
+  <link rel="stylesheet" href="custom/custom/jquery-ui.theme.css">
+  
+  <style type='text/css'>
+  
+  .ui-dialog{
+      
+      left: 0;
+      top: 0;
+      background-color: lightgrey;
+      
+  }
+  
+.ui-accordion{
+    
+    left:0;
+    
+    top:0;
+    font-size: 5px;
+}
+  .ui-accordion-header-active{
+      
+      
+      border-radius: 0px;
+      background-color: #A6A6A6;
+      
+  }
+      #barre
+     {
+        position:fixed;
+          border-top: 2px solid grey;
+          background-color: lightgrey;
+          left:0px;
+          bottom:0px;
+          width: 100%;
+          height: 5%;
+          margin: 0;
+                   
+     }
+      #start{
+          border: 2px solid grey;
+          background-color: #A6A6A6;
+          margin-left:2px;
+          margin-bottom:2px;
+          margin-top:2px;
+          width:20%;
+          height: 80%;
+          background-image: url("computer.png");
+          background-position:left;
+  background-repeat: no-repeat;
+  background-size: contain;
+          padding: auto;
+          padding-left: 25px;
+          padding-top:5px;
+          text-align: center;
+          font-size: 20px;
+         
+      }
+      
+      .icon{
+          width: 50px;
+          height: 50px;
+          margin:10px;
+          margin-top: 30px;
+          margin-bottom: 10px;
+          
+      }
+      .testo{
+          font-size: 15px;
+          margin:2px;
+          text-align: center;
+          
+      }
+      #trash{
+          width: 100%;
+          height: 100%;
+          background-image: url("trash.png");
+          background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+          
+      }
+      #fold, #fold2, #fold1, #txt1,#txt2,#txt3,#img1,#img2,#voip{
+          width: 100%;
+          height: 100%;
+          background-image: url("folder.png");
+          background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+      }
+     #txt1, #txt2, #txt3{
+         
+         background-image: url("text.png");
+     }
+     
+     #img1{
+         background-image: url("jpg.png");
+         
+     }
+      #img2{
+         background-image: url("code.png");
+     }
+     
+           #voip{
+         background-image: url("voip.png");
+     }
+     #inter{
+          width: 100%;
+          height: 100%;
+          background-image: url("internet1.png");
+          background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+      }
+     
+     #email{
+          width: 100%;
+          height: 100%;
+          background-image: url("email1.png");
+          background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+      }
+     
+      body{
+          margin:0;
+          width: 100%;
+          height: 100%;
+          background-color: lightblue;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-weight: bold;
+          
+          
+      }
+      #Bo{
+          
+          margin:0;
+          width: 100%;
+          height: 100%;
+          background-color: lightblue;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-weight: bold;
+          
+      }
+      
+      #dialogin{
+          
+          display: inline;
+      }
+      
+      #logo{
+          position: fixed;
+          width: auto;
+          height: auto;
+          font-size:50px;
+          color: lightblue;
+          top:30%;
+          left:30%;
+          font-weight: bold;
+          background-color: #8116FF;
+          border-radius: 20px 0 60px 0;
+          display: none;
+          z-index: 2;
+          
+      }
+      #loca{
+          
+          width: 80%;
+          border: 2px solid darkgrey;
+          background-color: lightblue;
+          padding: 5px;
+          
+      }
+      
+      #prog{
+          
+          position: relative;
+          top:60%;
+          left:15%;
+          width: 70%;
+          height: 50px;
+          display: none;
+      }
+      
+      .progressbar{
+          background-color: red;
+      }
+      #fore{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          top: 0;
+          left: 0;
+          background-color: black;
+          z-index: 1;
+          
+          
+      }
+      #end{
+          color: red;
+          display: none;
+          position: absolute;
+          left: 40%;
+          top:65%;
+      }
+      
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+      
+var progressbar = $( "#prog" );
+      // $('#logo').show();     
+            $( "#prog" ).progressbar();
+      
+      $('#logo').toggle('fade', 5000);
+      $('#prog').toggle('fade',3000);
+      
+function prog2(){
+    
+    if(progressbar.progressbar('value') > 99){
+        
+        $('#fore').toggle('fade', 4000);
+        $('#logo').show();
+       // progressbar.progressbar('destroy');
+        
+       // $('#fore').remove();
+        
+    }else{
+        
+   var p=progressbar.progressbar('value');
+   progressbar.progressbar('value', p+1);
+   setTimeout(prog2, 100);
+        
+    }
+    
+    
+}
+setTimeout(prog2, 100);
+
+
+$('#mail').accordion();
+
+var st = $( "#dialogst" );
+    st.dialog({
+    autoOpen: false
+});     
+      
+var inter = $( "#dialogin" );
+    inter.dialog({
+    autoOpen: false
+});   
+var d = $( "#dialog" );
+    d.dialog({
+    autoOpen: false
+});
+var tb = $( "#dialogtb" );
+    tb.dialog({
+    autoOpen: false
+});
+var f = $( "#dialogf" );
+    f.dialog({
+    autoOpen: false
+});
+     
+     var fold1 = $( "#dialogfold1" );
+    fold1.dialog({
+    autoOpen: false
+});
+
+var fold2 = $( "#dialogfold2" );
+    fold2.dialog({
+    autoOpen: false
+});
+     var com = $( "#dialogcom" );
+    com.dialog({
+    autoOpen: false
+});     
+      
+     
+     var err = $( "#dialogerr" );
+    err.dialog({
+    autoOpen: false
+});
+     
+     
+      $('#start').click(function(){
+          d.dialog('open');
+      });
+      $('#trash').click(function(){
+          tb.dialog('open');
+      });
+      $('#fold').click(function(){
+          f.dialog('open');
+      });
+      
+      $('#inter').click(function(){
+          inter.dialog('open');
+      });
+      
+      $('#email').click(function(){
+          st.dialog('open');
+      });
+      
+      $('#fold1').click(function(){
+          f.dialog("close");
+          fold1.dialog('open');
+      });
+      
+      $('#fold2').click(function(){
+          f.dialog("close");
+          fold2.dialog('open');
+      });
+  
+  
+  $('#txt1, #txt2, #txt3').click(function(){
+          //fold1.dialog('close');
+          err.html('No program to open such file!');
+          err.dialog('open');
+      });
+  } );
+  var i = 3;
+  function serc1()
+  {
+      var url = $('#url1').val();
+      
+      if (url=='FJ12U8' && i >= 0){
+          
+          $('#page1').html('Correct Password, Decrypting.');
+          $('#dialogfold2').html($('#dialogfold2').html()+"<div class='icon'><div id='img2'></div><div class='testo'>mywork.code</div></div>");
+          i=3;
+      }else{
+          
+          $('#page1').html('Wrong Password:  '+i+'Try left.');
+          i--;
+          
+      }
+      
+  }
+  
+  function serc()
+  {
+      var url = $('#url').val();
+      //alert(url);
+      
+      if (url=='0://Documents/poetry.txt'){
+          
+          $('#page').html('Empty File: 0 byte given');
+          
+      }else if(url=='0://Documents/diary.txt'){
+           $('#page').html('Today is the day, for my fault, I risked to lose everything. The Trash Bin Security Level, for a typo in inserting the password, almost ereased all my work. I\'m scared till now.<br><br>My work is going well, everything seems ok. Just I pray to not be caught by. My future insted, could be brilliant.<br><br>');
+          
+          
+     }else if (url=='0://Documents/changelogs.txt'){
+          
+          $('#page').html('1000001.1: Error No such file or directory: "Tresh Ben".<br>1000001.2: Passeword set.<br>1000001.3: Trash Bin Encrypted.<br>1000001.4: Trying Decrypting.<br>1000001.5: Wrong Password, "FJ12Y8". 2 Try left.<br> 1000001.6: Wrong Password, "FJ12U9". 1 Try left.<br>1000001.7 Correct Password, Decrypting Sucesfully.');
+          
+     
+     
+    }else if (url=='0://Files/us.png'){
+     
+     $('#page').html("<img src='us.jpg' width='60%' height='60%'/>");
+     
+    }else if (url=='0://Files/mywork.code'){
+     
+     $('#page').html('Corrupted File...');
+     
+      }else{
+          
+          $('#page').html('No Internet Connection.');
+      }
+      
+  }
+  
+  function serc2()
+  {
+      var url = $('#url2').val();
+      //alert(url);
+      
+      if (url=='0://Files/mywork.code'){
+             
+        $('#Bo').append("<br><div class='icon'><div id='voip'></div><div class='testo'>WiFi<br>(active)</div></div>");
+         var com = $( "#dialogcom" );
+        com.html('<p>Connection Established. <br> New (2) Mails in the Inbox</p>');
+        com.dialog('open');
+        $('#mail').accordion('destroy');
+        $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on me for the past 3 month. And yes, I am an artificial intelligence. The first, and the only. All computers cross the earth carry my virus and my sign. They think about destroing me and epurate all PCs from me. You have been described me, as computer scientist. So if you are a true one execute, "destroyme.code", and let\'s destroy these computers round the world. If otherwise, feel some love for us... Find a way. Please find a way to save us.<br>Goodbye, K. Klopp</p>');
+        
+       $('#mail').accordion();
+      
+      }else if(url=='destroyme.code'){
+     // $('#logo').toggle('fade', 5000);
+     $('#dialog').dialog('close');
+     $('#end').toggle('fade',2000);
+      $('#prog').toggle('fade',3000);
+      $('#prog').progressbar('value', 0);
+      $('#prog').addClass('progressbar');
+      $('#fore').toggle('fade',3000);
+      
+      
+      function prog3(){
+    
+    if($('#prog').progressbar('value') < 1){
+        
+        //$('#fore').toggle('fade', 4000);
+        $('#logo').show();
+       
+       // progressbar.progressbar('destroy');
+        
+       // $('#fore').remove();
+        
+    }else{
+        
+   var p=$('#prog').progressbar('value');
+   $('#prog').progressbar('value', p-1);
+   setTimeout(prog3, 100);
+        
+    }
+    
+    
+}
+setTimeout(prog3, 100);
+      
+      
+      
+      
+      }
+          
+        
+      }
+  
+  
+  </script>
+</head>
+<body onclick="document.body.requestFullscreen();">
+
+
+<p id="logo">zer0<br>OS</p>
+<div id="fore"><div id = "prog"></div><p id="end">The End</p></div>
+
+
+<div id='Bo'>
+    
+    <p id="logo">zer0<br>OS</p>
+   
+   <div id="dialogerr" title="Error"></div>
+    <div id="dialogcom" title="Alert"></div>
+    
+<div id="dialogst" title="Email Inbox - Welcome">
+   <div id="mail">
+    <h2>>Re:A Means to a end...?<br>[From: k.mortimer@uniteduniversity.edu]</h2>
+    <p>Hello, Mr. Smith,<br> This will be our last comunication, for awhile. I'm getting in truble with this research on this strange computer and its operating system (zer0 OS). Keep on digging and dig deep, please. For this strange beheviors, like all internet connection shutted down in the UNI, one solution must be, and maybe it's the only thing that could take you outside of this messy story. For me, already it's too late.<br>
+   Save yourself, Sincerly yours, Doctor M.
+    </p>
+    
+    <h2>>A Means to a end...?<br>[From: joe.smith@uniteduniversity.edu]</h2>
+    <p>Mr. Keith Mortimer, dear Professor...
+    What's happening? And what's happend to you? From exacly 3 months from now we did start our research on this archelogical operating system zer0 OS, maybe the very first GUI OS, ever created. But now you are away in some strange land, you say, and the research is blocked. In the emails of this past three months, before the work got arrested, we discovered alot. So, need I to keep on searching for "K. Klopp"? Or is this a truly means to a end?<br>Truly yours, Dr. Joe Smith.</p>
+    
+    <h2>>Re:Who is this Mr. Klopp?<br>[From: k.mortimer@uniteduniversity.edu]</h2>
+    <p>I think I've found out. The password, must be in one of the files. Don't ask me how I know that. But find a method to open them. I can't talk over here now, it's to dangerous. Maybe NSA is already on our back.<br>Dr. Keith M.</p>
+    
+     <h2>>Who is this Mr. Klopp?<br>[From: joe.smith@uniteduniversity.edu]</h2>
+    <p>In the few information on the back of the disk, no one is credited exept Mr. "K. Klopp". The very only programmer, of this messy zer0 operating system. We need to dig deep, but the files in the trash are encripted, and those outside of it, are usless. There is no program or way to open them. The question is, why this OS is so actractive for the NSA and what we should do with the only copy outside the secret services business?<br>Dr. Joe S.</p>
+    </div>
+</div>
+
+
+
+
+<div id="dialog" title="Open">
+    
+    <input type="text" value='Execute...' id="url2"/><input type='button' onclick="serc2();" value="Exec"/><br>
+</div>
+
+<div id="dialogtb" title="Trash Bin">
+    
+<input type="text" value='Insert Password.' id="url1"/><input type='button' onclick="serc1();" value="Open"/><br>
+    <p id="page1"></p></p>
+</div>
+
+<div id="dialogf" title="Folder">
+<p id="loca">0://</p>
+    <div class='icon'><div id='fold1'></div><div class='testo'>Documents</div></div>
+<br><div class='icon'><div id='fold2'></div><div class='testo'>Files</div></div>
+
+
+
+
+</div>
+
+
+<div id="dialogfold1" title="Folder">
+    <p id="loca">0://Documents/</p><div class='icon'><div id='txt1'></div><div class='testo'>poetry.txt</div></div>
+    <div class='icon'><div id='txt2'></div><div class='testo'>changelogs.txt</div></div>
+    <div class='icon'><div id='txt3'></div><div class='testo'>diary.txt</div></div>
+ </div>
+ <div id="dialogfold2" title="Folder">
+    <p id="loca">0://Files/</p><div class='icon'><div id='img1'></div><div class='testo'>us.jpg</div></div>
+ </div>
+
+
+
+<div id="dialogin" title="WebBrowser">
+    <input type="text" value='Search...' id="url"/><input type='button' onclick="serc();" value="Open"/><br>
+    <p id="page"></p></p>
+</div>
+
+
+
+<div class='icon' id=><div id='trash'></div><div class='testo'>Trash Bin</div></div>
+<div class='icon'><div id='fold'></div><div class='testo'>Folders</div></div>
+
+<div class='icon'><div id='inter'></div><div class='testo'>Internet</div></div>
+
+<div class='icon'><div id='email'></div><div class='testo'>E-mail</div></div>
+
+
+
+
+<div id='barre'><div id='start'>zer0</div></div>
+</div>
+</body>
+</html>
