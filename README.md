@@ -1,3 +1,4 @@
-- A game. Hopefully fun one...
-- A kind of a misery it's locked inside a old computer machine. All you need to do is to find it, if you really want to.
-- by Alardo96
+- 🎮 A game: Hopefully fun one.
+- 🛸 A kind of a misery it's locked inside a old computer machine. All you need to do is to find it, if you really want to...
+- 👨‍💻 Still in development.
+- 👨 Hand-coded by @alardo.
