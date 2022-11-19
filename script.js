@@ -1,4 +1,5 @@
 var codeprog1 = false;
+var speed = 2000;
   $( function() {
       
 var progressbar = $( "#prog" );
@@ -7,6 +8,7 @@ var progressbar = $( "#prog" );
       
       $('#logo').toggle('fade', 5000);
       $('#prog').toggle('fade',3000);
+      $('#begin').toggle('fade',3000);
       
 function prog2(){
     
@@ -14,6 +16,7 @@ function prog2(){
         
         $('#fore').toggle('fade', 4000);
         $('#logo').show();
+        $('#begin').toggle('fade', 4000);
        // progressbar.progressbar('destroy');
         
        // $('#fore').remove();
@@ -22,13 +25,13 @@ function prog2(){
         
    var p=progressbar.progressbar('value');
    progressbar.progressbar('value', p+10);
-   setTimeout(prog2, 100);
+   setTimeout(prog2, speed);
         
     }
     
     
 }
-setTimeout(prog2, 20);
+setTimeout(prog2, speed);
 
 
 $('#mail').accordion({
@@ -182,8 +185,12 @@ var fold2 = $( "#dialogfold2" );
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
-    $('#end1').html('Some months later, something happens...');
+    $('#end1').html('Some months later,<br> something happens...');
     $('#end1').toggle('fade',2000);
+      $('#prog').toggle('fade',3000);
+      $('#prog').progressbar('value', 0);
+      $('#prog').addClass('progressbar');
+      $('#fore').toggle('fade',3000);
   }else{
     $('#dialogal').html("<p>Seems to be quiet here...</p>");
     $('#dialogal').dialog('open');
@@ -192,7 +199,7 @@ var fold2 = $( "#dialogfold2" );
   function serc2()
   {
       var url = $('#url2').val();
-      alert(url);
+     // alert(url);
       if(url=='0://Files/destroyme.code'){
      // $('#logo').toggle('fade', 5000);
      //$('#dialog').dialog('close');

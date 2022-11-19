@@ -187,7 +187,7 @@ ttt  */
           height: 25%;
           font-size:70px;
           color: lightblue;
-          top:25%;
+          top:15%;
           left:25%;
           font-weight: bold;
           background-color: #1691ff;
@@ -216,7 +216,7 @@ ttt  */
       #prog{
           
           position: relative;
-          top:65%;
+          top:53%;
           left:15%;
           width: 70%;
           height: 50px;
@@ -253,15 +253,24 @@ ttt  */
       }
       #end, #end1{
           color: red;
-          display: none;
           position: absolute;
+          display: none;
           left: auto;
-          top:80%;
+          top:60%;
           text-align: center;
       }
       #end1{
         color:  black;
-        left:10%;
+      }
+      #begin{
+        color: lightgrey;
+          position: absolute;
+          display: none;
+          left: 7%;
+          right: 7%;
+          top: 60%;
+          text-align: center;
+          z-index: 1;
       }
   #mail{
   }
