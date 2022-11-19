@@ -178,11 +178,11 @@ var fold2 = $( "#dialogfold2" );
   }else if(url=='http://www.uniteduni.edu/upload'){
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>Paste here the local reference to the file you want to upload and hit enter</p>");
     $('#dialogal').dialog('open');
-  }else if(url == '0://Files/keepmealive.code'){
+  }else if(url == '0://Files/mywork.code'){
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
-    $('#end1').html('Some months later...');
+    $('#end1').html('Some months later, something happens...');
     $('#end1').toggle('fade',2000);
   }else{
     $('#dialogal').html("<p>Seems to be quiet here...</p>");
@@ -195,8 +195,8 @@ var fold2 = $( "#dialogfold2" );
       alert(url);
       if(url=='0://Files/destroyme.code'){
      // $('#logo').toggle('fade', 5000);
-     $('#dialog').dialog('close');
-     $('#end').html('The End:<br>The virus it\'s gone forever.<br>The question: it\'s been the right thing to do.');
+     //$('#dialog').dialog('close');
+     $('#end').html('Try again, Mr. Smith:<br>The virus it\'s gone forever.<br>Are you brave enough, to tell us it\'s been a good choice?');
      $('#end').toggle('fade',2000);
       $('#prog').toggle('fade',3000);
       $('#prog').progressbar('value', 0);
