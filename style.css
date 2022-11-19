@@ -17,13 +17,13 @@ ttt  */
       
       left: 0;
       top: 0;
+      height:80%;
       background-color: lightgrey;
       
   }
   
 .ui-accordion{
     left:0;
-    
     top:0;
     font-size: 5px;
 }
@@ -31,6 +31,8 @@ ttt  */
       border-radius: 0px;
       background-color: #A6A6A6;
       
+  }
+  .ui-accordion-content{
   }
       #barre
      {
@@ -132,7 +134,7 @@ ttt  */
       
       
       #dialogst{
-        height: 70%;
+        height: 100%;
       }
      
       body{
@@ -226,3 +228,5 @@ ttt  */
           top:80%;
           text-align: center;
       }
+  #mail{
+  }

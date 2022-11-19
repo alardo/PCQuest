@@ -31,7 +31,9 @@ function prog2(){
 setTimeout(prog2, 20);
 
 
-$('#mail').accordion();
+$('#mail').accordion({
+      heightStyle: "auto"
+    });
 
 var st = $( "#dialogst" );
     st.dialog({
@@ -134,7 +136,9 @@ var fold2 = $( "#dialogfold2" );
         $('#mail').accordion('destroy');
         $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on me for the past 3 month. And yes, I am an artificial intelligence. The first, and the only. All computers cross the earth carry my virus and my sign. Now you know, Mr. Smith. You have been described yourself, as computer scientist. So if you are a true one, you have two choices: destroy these ancient computers intelligence from the world. Or, otherwise, feel some love for us... Find a way. Please find a way to save us. If you look close, everyone want to left something, behind.<br>Goodbye, K. Klopp</p><h2>News from Prof. Mortimer<br>[From: info@unithospital.us]</h2><p>Dear Professor,<br> Prof. Mortimer let us know, that you were the only one he cared about in his lifetime. With that in mind, we inform you that he is gone, and with him, his strange ideas about a virus that want to infect all computers round the world. He said the choice is yours, to believe him or in the virus. <br> Best Regards, UNIT HOSPITAL Staff.</p>');
         
-       $('#mail').accordion();
+       $('#mail').accordion({
+      heightStyle: "auto"
+    });
      
       }else if(clicked=='img3'){
         al.html('Can\'t execute this file directly. No such program to open the file.');
