@@ -32,6 +32,9 @@ ttt  */
       background-color: lightgrey;
       
   }
+  .ui-dialog-titlebar{
+    background-color:#1691ff ;
+  }
   
 .ui-accordion{
   display: block;
@@ -43,7 +46,7 @@ ttt  */
 }
   .ui-accordion-header-active{
       border-radius: 0px;
-      background-color: #A6A6A6;
+      background-color: #1691ff;
       
   }
   .ui-accordion-content{

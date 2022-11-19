@@ -7,4 +7,4 @@
 - 👨 Hand-coded by @alardo.
 ### + How to Play:
 - 🕹️ Play it here online: [PCQuest](https://www.emilianovs.it/PCQuest/index.html).
-- ⏬ Or download the source code, and have fun!!!
+- ⏬ Or download the source, (with extra high risk of *coding horrors*)!!!
