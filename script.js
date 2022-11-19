@@ -181,6 +181,9 @@ var fold2 = $( "#dialogfold2" );
   }else if(url == '0://Files/keepmealive.code'){
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
+    $('#forew').toggle('fade',3000);
+    $('#end1').html('Some months later...');
+    $('#end1').toggle('fade',2000);
   }else{
     $('#dialogal').html("<p>Seems to be quiet here...</p>");
     $('#dialogal').dialog('open');
@@ -189,7 +192,7 @@ var fold2 = $( "#dialogfold2" );
   function serc2()
   {
       var url = $('#url2').val();
-      //alert(url);
+      alert(url);
       if(url=='0://Files/destroyme.code'){
      // $('#logo').toggle('fade', 5000);
      $('#dialog').dialog('close');
