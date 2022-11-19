@@ -73,7 +73,7 @@ ttt  */
           margin-top:2px;
           width:20%;
           height: 70%;
-          background-image: url("computer.png");
+          background-image: url("computer.ico");
           background-position:left;
   background-repeat: no-repeat;
   background-size: contain;
@@ -102,40 +102,46 @@ ttt  */
       #trash{
           width: 100%;
           height: 100%;
-          background-image: url("trash.png");
+          background-image: url("trash.ico");
           background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
           
       }
-      #fold, #fold2, #fold1, #txt1,#txt2,#txt3,#img1,#img2,#img3, #voip{
+      #fold, #fold2, #fold1, #txt1,#txt2,#txt3,#img1,#img2,#img3, #voip, #edit{
           width: 100%;
           height: 100%;
-          background-image: url("folder.png");
+          background-image: url("folder.ico");
           background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
       }
      #txt1, #txt2, #txt3{
          
-         background-image: url("text.png");
+         background-image: url("text.ico");
      }
      
      #img1{
-         background-image: url("jpg.png");
+         background-image: url("jpg.ico");
          
      }
       #img2, #img3{
-         background-image: url("code.png");
+         background-image: url("code.ico");
      }
      
            #voip{
-         background-image: url("voip.png");
+         background-image: url("voip.ico");
+     }
+      #edit{
+         background-image: url("edit.ico");
+     }
+     #edi{
+       display: none;
      }
      #inter{
           width: 100%;
           height: 100%;
-          background-image: url("internet1.png");
+          background-image: url("internet1.ico");
           background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -144,7 +150,7 @@ ttt  */
      #email{
           width: 100%;
           height: 100%;
-          background-image: url("email1.png");
+          background-image: url("email1.ico");
           background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -261,6 +267,7 @@ ttt  */
       }
       #end1{
         color:  black;
+        left: 30%;
       }
       #begin{
         color: lightgrey;

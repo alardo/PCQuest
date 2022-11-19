@@ -1,4 +1,4 @@
-var codeprog1 = false;
+var codeprog1 = 1;
 var speed = 2000;
   $( function() {
       
@@ -82,7 +82,10 @@ var fold2 = $( "#dialogfold2" );
     err.dialog({
     autoOpen: false
 });
-     
+var ed = $( "#dialoged" );
+    ed.dialog({
+    autoOpen: false
+});
      
       $('#start').click(function(){
           d.dialog('open');
@@ -111,6 +114,11 @@ var fold2 = $( "#dialogfold2" );
           f.dialog("close");
           fold2.dialog('open');
       });
+      
+      $('#edit').click(function(){
+          f.dialog("close");
+          ed.dialog('open');
+      });
   
   
   $('#txt1, #txt2, #txt3, #img1, #img2').click(function(){
@@ -130,8 +138,8 @@ var fold2 = $( "#dialogfold2" );
      
      al.html("<img src='us.jpg' width='60%' height='60%'/>");
      
-    }else if (clicked=='img2' && codeprog1 == false){
-     codeprog1 = true;
+    }else if (clicked=='img2' && codeprog1 == 1){
+     codeprog1 = 2;
      $('#codeprog2').show();
      $('#Bo').append("<br><div class='icon'><div id='voip'></div><div class='testo'>WiFi<br>(active)</div></div>");
          var com = $( "#dialogcom" );
@@ -181,16 +189,21 @@ var fold2 = $( "#dialogfold2" );
   }else if(url=='http://www.uniteduni.edu/upload'){
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>Paste here the local reference to the file you want to upload and hit enter</p>");
     $('#dialogal').dialog('open');
-  }else if(url == '0://Files/mywork.code'){
+  }else if(url == '0://Files/mywork.code' && codeprog1==2){
+    codeprog1 = 3;
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
     $('#end1').html('Some months later,<br> something happens...');
     $('#end1').toggle('fade',2000);
-      $('#prog').toggle('fade',3000);
-      $('#prog').progressbar('value', 0);
-      $('#prog').addClass('progressbar');
-      $('#fore').toggle('fade',3000);
+
+      setTimeout(
+        function() 
+          {
+    $('#end1').toggle('fade',2000);
+      $('#forew').toggle('fade',3000);
+        }, 5000);
+      $('#edi').show();
   }else{
     $('#dialogal').html("<p>Seems to be quiet here...</p>");
     $('#dialogal').dialog('open');
@@ -199,11 +212,15 @@ var fold2 = $( "#dialogfold2" );
   function serc2()
   {
       var url = $('#url2').val();
+      if(url=='0://Files/mywork.code'){
+        
+        $('#dialogal').html('That\'s me, code of my code.');
+        $('#dialogal').dialog('open');
      // alert(url);
-      if(url=='0://Files/destroyme.code'){
+      }else if(url=='0://Files/destroyme.code'){
      // $('#logo').toggle('fade', 5000);
      //$('#dialog').dialog('close');
-     $('#end').html('Try again, Mr. Smith:<br>The virus it\'s gone forever.<br>Are you brave enough, to tell us it\'s been a good choice?');
+     $('#end').html('Good Luck, Mr. Smith:<br>The virus it\'s gone forever.<br>Are you brave enough, to tell us it\'s been a good choice?');
      $('#end').toggle('fade',2000);
       $('#prog').toggle('fade',3000);
       $('#prog').progressbar('value', 0);
