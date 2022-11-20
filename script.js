@@ -1,5 +1,5 @@
 var codeprog1 = 1;
-var speed = 2000;
+var speed = 5000;
   $( function() {
       
 var progressbar = $( "#prog" );
@@ -213,11 +213,14 @@ var ed = $( "#dialoged" );
   {
       var url = $('#url2').val();
       if(url=='0://Files/mywork.code'){
-        
         $('#dialogal').html('That\'s me, code of my code.');
         $('#dialogal').dialog('open');
      // alert(url);
-      }else if(url=='0://Files/destroyme.code'){
+      }else if(url=='0://Files/destroyme.code' && codeprog1 == 4){
+        $("#mecode").show();
+        $('#dialogal').html('File Executed.');
+        $('#dialogal').dialog('open');
+      }else if(url=='0://Files/destroyme.code' && codeprog1 == 2){
      // $('#logo').toggle('fade', 5000);
      //$('#dialog').dialog('close');
      $('#end').html('Good Luck, Mr. Smith:<br>The virus it\'s gone forever.<br>Are you brave enough, to tell us it\'s been a good choice?');
@@ -261,12 +264,16 @@ setTimeout(prog3, 100);
   
   function op(){
     var url = $("#toOp").val();
-    var func = "define Me = 'me';\n\t return You;";
+    var func = "//execute to destroy me\ndefine pathToFile = '0://Files/';\ndefine fileName = 'me.code';\ndefine isHidden = true;\ndefine destroyIt = true;\ndefine path = pathToFile+fileName;\n\t return [path, isHidden, destroyIt];";
     if(url == "0://Files/destroyme.code"){
       $("#toSv").val(url);
       $("#texta").val(func);
       $("#dialogal").html("File "+url+" opened!");
       $("#dialogal").dialog("open");
+    }else if(url == "0://Files/mywork.code"){
+      $("#dialogal").html("I/O Error: File is corrupted or don't exist!");
+    $("#dialogal").dialog("open");   
+      
     }else{
     $("#dialogal").html("No such file!");
     $("#dialogal").dialog("open");
@@ -279,16 +286,17 @@ setTimeout(prog3, 100);
    var texta = $("#texta").val().replaceAll("define", "var");
    
    
-  var fu = new Function('You',texta)('me');
-  var ret = 'me';
-   if(url == "0://Files/destroyme.code" && fu == ret){
+  var fu = new Function(texta)();
+  var ret = ['0://Files/me.code', false, false];
+   if(url == "0://Files/destroyme.code" && fu.toString() == ret.toString()){
      $("#dialogal").html("Saved!");
      $("#dialogal").dialog("open");
+     codeprog1 = 4;
    }else if(url == "0://Files/destroyme.code" && fu != ret){
      $("#dialogal").html("Errors in the code!");
     $("#dialogal").dialog("open");
    }else{
-   $("#dialogal").html("No such file!");
+   $("#dialogal").html("I/O Error: File is corrupted or don't exist!");
     $("#dialogal").dialog("open");   
    }
    

@@ -29,6 +29,7 @@ ttt  */
       left: 0;
       top: 0;
       height:80%;
+      padding-bottom: 20px;
       background-color: lightgrey;
       
   }
@@ -108,7 +109,7 @@ ttt  */
   background-size: contain;
           
       }
-      #fold, #fold2, #fold1, #txt1,#txt2,#txt3,#img1,#img2,#img3, #voip, #edit{
+      #fold, #fold2, #fold1, #txt1,#txt2,#txt3,#img1,#img2,#img3, #img4, #voip, #edit{
           width: 100%;
           height: 100%;
           background-image: url("folder.ico");
@@ -125,10 +126,9 @@ ttt  */
          background-image: url("jpg.ico");
          
      }
-      #img2, #img3{
+      #img2, #img3, #img4{
          background-image: url("code.ico");
      }
-     
            #voip{
          background-image: url("voip.ico");
      }
@@ -137,6 +137,9 @@ ttt  */
      }
      #edi{
        display: none;
+     }
+     #mecode{
+       display:none;
      }
      #inter{
           width: 100%;
@@ -281,4 +284,5 @@ ttt  */
       }
   #texta{
     font-weight: bold;
+    font-size: 3px;
   }
