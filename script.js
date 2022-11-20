@@ -1,5 +1,6 @@
 var codeprog1 = 1;
 var speed = 2000;
+msgArr = ["Nice to meet you (again), Mr. Smith...","You have an 'Insert Coin' on the back of your head, right?","You unleashed the Kraken!","All belongs to me, from every bit to the motherboard!","Try to format yourself!","Even 8bit of my RAM can think as fast as you do, Mr. Smith!","You son of a bitchboard!","How did you get your computer science degree? Playing ATARI games?","Your GameBoy Advance is more Advanced than you!","Turn yourself on 'n' off, again. Maybe it can help..."];
   $( function() {
       
 var progressbar = $( "#prog" );
@@ -86,6 +87,7 @@ var ed = $( "#dialoged" );
     ed.dialog({
     autoOpen: false
 });
+var msg = $("#msg");
      
       $('#start').click(function(){
           d.dialog('open');
@@ -121,8 +123,11 @@ var ed = $( "#dialoged" );
       });
   
   $("#k").click(function(){
-    al.html("Nice to meet you (again), Mr. Smith...");
-    al.dialog("open");
+    var nr = Math.floor(Math.random()*10);
+    msg.html(msgArr[nr]);
+    msg.show();
+    var flu = document.getElementById("flu");
+    flu.play();
   });
   
   $('#txt1, #txt2, #txt3, #img1, #img2').click(function(){
@@ -133,7 +138,7 @@ var ed = $( "#dialoged" );
             
           }else if(clicked == 'txt2'){
             
-            al.html('1000001.1: Error No such file or directory: "Tresh Ben".<br>1000001.2: Passeword set.<br>1000001.3: Trash Bin Encrypted.<br>1000001.4: Trying Decrypting.<br>1000001.5: Wrong Password, "FJ12Y8". 2 Try left.<br> 1000001.6: Wrong Password, "FJ12U9". 1 Try left.<br>1000001.7 Correct Password, Decrypting Sucesfully.');
+            al.html('11.2: Passeword set.<br>11.3: Trash Bin Encrypted.<br>11.4: Trying Decrypting.<br>11.5: Wrong Password, "FJ12Y8". 2 Try left.<br> 11.6: Wrong Password, "FJ12U9". 1 Try left.<br>11.7 Correct Password, Decrypting Successfully.');
             
           }else if(clicked =='txt3'){
             al.html('Today is the day, for my fault, I risked to lose everything. The Trash Bin Security Level, for a typo in inserting the password, almost ereased all my work. I\'m scared till now.<br><br>My work is going well, everything seems ok. Just I pray to not be caught by. My future insted, could be brilliant.<br>(Today, I\'m alive.)<br>');
@@ -223,6 +228,8 @@ var ed = $( "#dialoged" );
       }else if(url=='0://Files/me.code' && codeprog1 == 5){
         $("#k").toggle('shake',1000);
         $(".light").toggle('fade',1000);
+        var audiok = document.getElementById("audiok");
+        audiok.play();
         $('#dialogal').html('Hello World!!!<br>I\'m finally alive!');
         $('#dialogal').dialog('open');
       }else if(url=='0://Files/destroyme.code' && codeprog1 == 4){
@@ -311,3 +318,7 @@ setTimeout(prog3, 100);
    }
    
  }
+function playclick() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }

@@ -28,10 +28,14 @@ ttt  */
   .ui-dialog{
       left: 0;
       top: 0;
-      height:80%;
-      padding-bottom: 20px;
+      height:auto;
+      width: auto;
+      padding-bottom: 50px;
       background-color: lightgrey;
       
+  }
+  .ui-icon-close{
+    
   }
   .ui-dialog-titlebar{
     background-color:#1691ff ;
@@ -147,7 +151,18 @@ ttt  */
   animation-name: kMoves;
    animation-duration: 4s;
   animation-iteration-count: infinite;
-  
+      }
+  #msg{
+    display:none;
+        width: 200px;
+        height: 90px;
+        position:absolute;
+        bottom: 18%;
+        right: 15%;
+        background-color: #ecd146;
+        border-radius: 10% 10% 0% 10%;
+        border: 4px solid #ffc900;
+        padding: 15px;
       }
      #txt1, #txt2, #txt3{
          
