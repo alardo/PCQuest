@@ -194,7 +194,7 @@ var ed = $( "#dialoged" );
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
-    $('#end1').html('Some months later,<br> something happens...');
+    $('#end1').html('Some months later,<br> something happens...<br><b>(Still in development)</b>');
     $('#end1').toggle('fade',2000);
 
       setTimeout(
@@ -258,3 +258,38 @@ setTimeout(prog3, 100);
           
         
   }
+  
+  function op(){
+    var url = $("#toOp").val();
+    var func = "define Me = 'me';\n\t return You;";
+    if(url == "0://Files/destroyme.code"){
+      $("#toSv").val(url);
+      $("#texta").val(func);
+      $("#dialogal").html("File "+url+" opened!");
+      $("#dialogal").dialog("open");
+    }else{
+    $("#dialogal").html("No such file!");
+    $("#dialogal").dialog("open");
+    }
+    
+  }
+  
+ function sv(){
+   var url = $("#toOp").val();
+   var texta = $("#texta").val().replaceAll("define", "var");
+   
+   
+  var fu = new Function('You',texta)('me');
+  var ret = 'me';
+   if(url == "0://Files/destroyme.code" && fu == ret){
+     $("#dialogal").html("Saved!");
+     $("#dialogal").dialog("open");
+   }else if(url == "0://Files/destroyme.code" && fu != ret){
+     $("#dialogal").html("Errors in the code!");
+    $("#dialogal").dialog("open");
+   }else{
+   $("#dialogal").html("No such file!");
+    $("#dialogal").dialog("open");   
+   }
+   
+ }

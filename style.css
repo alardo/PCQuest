@@ -279,5 +279,6 @@ ttt  */
           text-align: center;
           z-index: 1;
       }
-  #mail{
+  #texta{
+    font-weight: bold;
   }
