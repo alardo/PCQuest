@@ -1,5 +1,5 @@
 var codeprog1 = 1;
-var speed = 5000;
+var speed = 2000;
   $( function() {
       
 var progressbar = $( "#prog" );
@@ -120,6 +120,10 @@ var ed = $( "#dialoged" );
           ed.dialog('open');
       });
   
+  $("#k").click(function(){
+    al.html("Nice to meet you (again), Mr. Smith...");
+    al.dialog("open");
+  });
   
   $('#txt1, #txt2, #txt3, #img1, #img2').click(function(){
          var clicked = $(this).attr('id');
@@ -145,7 +149,7 @@ var ed = $( "#dialoged" );
          var com = $( "#dialogcom" );
         al.html('<p>Connection Established. <br> New (2) Mails in the Inbox</p>');
         $('#mail').accordion('destroy');
-        $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on me for the past 3 month. And yes, I am an artificial intelligence. The first, and the only. All computers cross the earth carry my virus and my sign. Now you know, Mr. Smith. You have been described yourself, as computer scientist. So if you are a true one, you have two choices: destroy these ancient computers intelligence from the world. Or, otherwise, feel some love for us... Find a way. Please find a way to save us. If you look close, everyone want to left something, behind.<br>Goodbye, K. Klopp</p><h2>News from Prof. Mortimer<br>[From: info@unithospital.us]</h2><p>Dear Professor,<br> Prof. Mortimer let us know, that you were the only one he cared about in his lifetime. With that in mind, we inform you that he is gone, and with him, his strange ideas about a virus that want to infect all computers round the world. He said the choice is yours, to believe him or in the virus. <br> Best Regards, UNIT HOSPITAL Staff.</p>');
+        $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Stay away from the UNI website (http://www.uniteduni.edu), and destroy everything. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on me for the past 3 month. And yes, I am an artificial intelligence. The first, and the only. All computers cross the earth carry my virus and my sign. Now you know, Mr. Smith. You have been described yourself, as computer scientist. So if you are a true one, you have two choices: destroy these ancient computers intelligence from the world. Or, otherwise, feel some love for us... Find a way. Please find a way to save us. If you look close, everyone want to left something, behind. Take me with you, in the outside world.<br>Goodbye, K. Klopp</p><h2>News from Prof. Mortimer<br>[From: info@unithospital.us]</h2><p>Dear Professor,<br> Prof. Mortimer let us know, that you were the only one he cared about in his lifetime. With that in mind, we inform you that he is gone, and with him, his strange ideas about a virus that want to infect all computers round the world. He said the choice is yours, to believe him or in the virus. <br> Best Regards, UNIT HOSPITAL Staff.</p>');
         
        $('#mail').accordion({
       heightStyle: "auto"
@@ -194,7 +198,7 @@ var ed = $( "#dialoged" );
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
-    $('#end1').html('Some months later,<br> something happens...<br><b>(Still in development)</b>');
+    $('#end1').html('Some months later,<br> something happens...');
     $('#end1').toggle('fade',2000);
 
       setTimeout(
@@ -216,7 +220,13 @@ var ed = $( "#dialoged" );
         $('#dialogal').html('That\'s me, code of my code.');
         $('#dialogal').dialog('open');
      // alert(url);
+      }else if(url=='0://Files/me.code' && codeprog1 == 5){
+        $("#k").toggle('shake',1000);
+        $(".light").toggle('fade',1000);
+        $('#dialogal').html('Hello World!!!<br>I\'m finally alive!');
+        $('#dialogal').dialog('open');
       }else if(url=='0://Files/destroyme.code' && codeprog1 == 4){
+        codeprog1=5;
         $("#mecode").show();
         $('#dialogal').html('File Executed.');
         $('#dialogal').dialog('open');
