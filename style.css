@@ -34,8 +34,12 @@ ttt  */
       background-color: lightgrey;
       
   }
-  .ui-icon-close{
-    
+  .ui-dialog-title{
+background-image: url("alert.ico");
+        background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left:20px;
   }
   .ui-dialog-titlebar{
     background-color:#1691ff ;
@@ -174,8 +178,11 @@ ttt  */
          background-image: url("jpg.ico");
          
      }
-      #img2, #img3, #img4{
-         background-image: url("code.ico");
+      #img2, #img4{
+         background-image: url("exec.ico");
+     }
+     #img3{
+       background-image: url("code.ico");
      }
            #voip{
          background-image: url("voip.ico");

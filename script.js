@@ -235,6 +235,7 @@ var msg = $("#msg");
         $('#dialogal').dialog('open');
      // alert(url);
       }else if(url=='0://Files/cli.exec' && codeprog1 == 5){
+        codeprog1 = 6;
         $("#k").toggle('shake',1000);
         $(".light").toggle('fade',1000);
         $("#msg").html('Hello World!!!<br>I\'m finally alive!!!');
