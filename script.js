@@ -1,8 +1,8 @@
-var codeprog1 = 1;
+var codeprog1 =1;
 var speed = 2000;
 msgArr = ["Nice to meet you (again), Mr. Smith...","You have an 'Insert Coin' on the back of your head, right?","You unleashed the Kraken!","All belongs to me, from every bit to the motherboard!","Try to format yourself!","Even 8bit of my RAM can think as fast as you do, Mr. Smith!","You son of a bitchboard!","How did you get your computer science degree? Playing ATARI games?","Your GameBoy Advance is more Advanced than you!","Turn yourself on 'n' off, again. Maybe it can help..."];
   $( function() {
-      
+setInterval(changeMsg, 10000);
 var progressbar = $( "#prog" );
       // $('#logo').show();     
             $( "#prog" ).progressbar();
@@ -123,9 +123,7 @@ var msg = $("#msg");
       });
   
   $("#k").click(function(){
-    var nr = Math.floor(Math.random()*10);
-    msg.html(msgArr[nr]);
-    msg.show();
+    changeMsg();
     var flu = document.getElementById("flu");
     flu.play();
   });
@@ -141,7 +139,7 @@ var msg = $("#msg");
             al.html('11.2: Passeword set.<br>11.3: Trash Bin Encrypted.<br>11.4: Trying Decrypting.<br>11.5: Wrong Password, "FJ12Y8". 2 Try left.<br> 11.6: Wrong Password, "FJ12U9". 1 Try left.<br>11.7 Correct Password, Decrypting Successfully.');
             
           }else if(clicked =='txt3'){
-            al.html('Today is the day, for my fault, I risked to lose everything. The Trash Bin Security Level, for a typo in inserting the password, almost ereased all my work. I\'m scared till now.<br><br>My work is going well, everything seems ok. Just I pray to not be caught by. My future insted, could be brilliant.<br>(Today, I\'m alive.)<br>');
+            al.html('Today is the day, for my fault, I risked to lose everything. The Trash Bin Security Level, for a typo in inserting the password, almost ereased all my work. I\'m scared till now.<br><br>My work is going well, everything seems ok. Just I pray to not be caught by.<br>');
             
           }else if(clicked=='img1'){
      
@@ -154,7 +152,7 @@ var msg = $("#msg");
          var com = $( "#dialogcom" );
         al.html('<p>Connection Established. <br> New (2) Mails in the Inbox</p>');
         $('#mail').accordion('destroy');
-        $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Stay away from the UNI website (http://www.uniteduni.edu), and destroy everything. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on me for the past 3 month. And yes, I am an artificial intelligence. The first, and the only. All computers cross the earth carry my virus and my sign. Now you know, Mr. Smith. You have been described yourself, as computer scientist. So if you are a true one, you have two choices: destroy these ancient computers intelligence from the world. Or, otherwise, feel some love for us... Find a way. Please find a way to save us. If you look close, everyone want to left something, behind. Take me with you, in the outside world.<br>Goodbye, K. Klopp</p><h2>News from Prof. Mortimer<br>[From: info@unithospital.us]</h2><p>Dear Professor,<br> Prof. Mortimer let us know, that you were the only one he cared about in his lifetime. With that in mind, we inform you that he is gone, and with him, his strange ideas about a virus that want to infect all computers round the world. He said the choice is yours, to believe him or in the virus. <br> Best Regards, UNIT HOSPITAL Staff.</p>');
+        $('#mail').html('<h2>>It\'s been a long time!<br>[From: k.mortimer@uniteduniversity.edu]</h2><p>My Dear, I\'m not dead, but maybe someone in my codition would pray to be. Now I am in a psychiatric facility, where I have access to a little laptap. So run, because with this email I have senteced you to death. They will find you, and it is better, knowing what you could know by that zer0 computer. Stay away from the UNI website (http://www.uniteduni.edu), and destroy everything. Brace Yourself, they are coming, and it is better, so much better like that<br>Sincerly yours, Doctor M.</p><h2>>You\'re good at it, I see<br>[From: k.klopp@zer0.OS]</h2><p>Hello Mr Smith, this is K Klopp. We know each other, don\'t we? You worked on my work for the past 3 month. And yes, I am the one, the builder of all this and what all of this, carry underneath and beyond, Mr. Smith. You have been described yourself, as computer scientist. So if you are a true one, you have two choices: destroy these ancient computers OS, from the world. Or, otherwise, feel some love for us... Find a way. Please find a way to save us. If you look close, everyone want to left something, behind. Take me with you, in the outside world.<br>Goodbye, K. Klopp</p><h2>News from Prof. Mortimer<br>[From: info@unithospital.us]</h2><p>Dear Professor,<br> Prof. Mortimer let us know, that you were the only one he cared about in his lifetime. With that in mind, we inform you that he is gone, and with him, his strange ideas about a virus that want to infect all computers round the world. He said the choice is yours, to believe him or in the virus. <br> Best Regards, UNIT HOSPITAL Staff.</p>');
         
        $('#mail').accordion({
       heightStyle: "auto"
@@ -171,6 +169,13 @@ var msg = $("#msg");
       al.dialog('open');
       });
   });
+  function changeMsg(){
+    var nr = Math.floor(Math.random()*10);
+    $("#msg").html(msgArr[nr]);
+    //$("#msg").show();
+    //var flu = document.getElementById("flu");
+    //flu.play();
+  }
   var i = 3;
   function serc1()
   {
@@ -198,14 +203,18 @@ var msg = $("#msg");
   }else if(url=='http://www.uniteduni.edu/upload'){
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>Paste here the local reference to the file you want to upload and hit enter</p>");
     $('#dialogal').dialog('open');
-  }else if(url == '0://Files/mywork.code' && codeprog1==2){
+  }else if(url == '0://Files/mywork.exec' && codeprog1==2){
     codeprog1 = 3;
     $('#dialogal').html("<h4>UnitedUNI.edu</h4><p>File successfully uploaded</p>");
     $('#dialogal').dialog('open');
     $('#forew').toggle('fade',3000);
     $('#end1').html('Some months later,<br> something happens...');
     $('#end1').toggle('fade',2000);
-
+    $('#mail').accordion('destroy');
+    $('#mail').html('<h2>News: Tech.net</h2><p>Next Microsoft Windows realese is up for next month.</p><h2>You don\'t know me, but in a way you do...<br>[From: j.parker@uniteduniversity.edu]</h2><p>Hello, my friend, my name is John.<br> I\'ve seen what you had uploaded. You don\'t know me, but in a sense you do. I\'m the one who created destroyme.code, and who build mywork.exec to create that. I\'ve been working hard, all to destroy K. Klopp and his virus, Cli.exec. All came from this OS, Zer0. Cli was there from the beginning. Maybe was mean to be there. And there to stay... But to erease him, you need to face him, in front of your eyes. You need to stand the truth: you must see to know, what you are going to defeat.<br>Best regards, my friend. Where I fall could you stand tall.</p>');
+    $('#mail').accordion({
+      heightStyle: "auto"
+    });
       setTimeout(
         function() 
           {
@@ -221,17 +230,19 @@ var msg = $("#msg");
   function serc2()
   {
       var url = $('#url2').val();
-      if(url=='0://Files/mywork.code'){
+      if(url=='0://Files/mywork.exec'){
         $('#dialogal').html('That\'s me, code of my code.');
         $('#dialogal').dialog('open');
      // alert(url);
-      }else if(url=='0://Files/me.code' && codeprog1 == 5){
+      }else if(url=='0://Files/cli.exec' && codeprog1 == 5){
         $("#k").toggle('shake',1000);
         $(".light").toggle('fade',1000);
+        $("#msg").html('Hello World!!!<br>I\'m finally alive!!!');
+        $("#msg").show();
         var audiok = document.getElementById("audiok");
         audiok.play();
-        $('#dialogal').html('Hello World!!!<br>I\'m finally alive!');
-        $('#dialogal').dialog('open');
+        //$('#dialogal').html('Hello World!!!<br>I\'m finally alive!');
+        //$('#dialogal').dialog('open');
       }else if(url=='0://Files/destroyme.code' && codeprog1 == 4){
         codeprog1=5;
         $("#mecode").show();
@@ -281,13 +292,13 @@ setTimeout(prog3, 100);
   
   function op(){
     var url = $("#toOp").val();
-    var func = "//execute to destroy me\ndefine pathToFile = '0://Files/';\ndefine fileName = 'me.code';\ndefine isHidden = true;\ndefine destroyIt = true;\ndefine path = pathToFile+fileName;\n\t return [path, isHidden, destroyIt];";
+    var func = "//execute to destroy me\ndefine pathToFile = '0://Files/';\ndefine fileName = 'cli.exec';\ndefine isHidden = true;\ndefine destroyIt = true;\ndefine path = pathToFile+fileName;\n\t return [path, isHidden, destroyIt];";
     if(url == "0://Files/destroyme.code"){
       $("#toSv").val(url);
       $("#texta").val(func);
       $("#dialogal").html("File "+url+" opened!");
       $("#dialogal").dialog("open");
-    }else if(url == "0://Files/mywork.code"){
+    }else if(url == "0://Files/mywork.exec"){
       $("#dialogal").html("I/O Error: File is corrupted or don't exist!");
     $("#dialogal").dialog("open");   
       
@@ -304,7 +315,9 @@ setTimeout(prog3, 100);
    
    
   var fu = new Function(texta)();
-  var ret = ['0://Files/me.code', false, false];
+  var ret = ['0://Files/cli.exec', false, false];
+   //console.log(fu);
+   //console.log(ret);
    if(url == "0://Files/destroyme.code" && fu.toString() == ret.toString()){
      $("#dialogal").html("Saved!");
      $("#dialogal").dialog("open");
