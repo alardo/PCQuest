@@ -339,7 +339,7 @@ background-image: url("alert.ico");
       }
   #texta{
     font-weight: bold;
-    font-size: 4px;
+    font-size: 8px;
   }
   
    @keyframes kMoves {
